@@ -1,5 +1,6 @@
 package eu.mrndesign.matned.springApp.model;
 
+import eu.mrndesign.matned.springApp.model.entityExtentions.BaseEntityIsDone;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -7,12 +8,12 @@ import java.time.LocalDateTime;
 @Entity
 //@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "tasks")
-public class Task extends BaseEntity {
+public class Task extends BaseEntityIsDone {
 
     @Id
     @GeneratedValue(generator = "inc")
     @GenericGenerator(name = "inc", strategy = "increment")
-    private int id;
+    private long id;
 
     private LocalDateTime deadline;
 
@@ -23,11 +24,11 @@ public class Task extends BaseEntity {
     public Task() {
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    void setId(final int id) {
+    void setId(final long id) {
         this.id = id;
     }
 

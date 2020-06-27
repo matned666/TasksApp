@@ -1,42 +1,34 @@
 package eu.mrndesign.matned.springApp.model;
 
-import eu.mrndesign.matned.springApp.model.entityExtentions.BaseEntityIsDone;
+import eu.mrndesign.matned.springApp.model.entityExtentions.BaseEntityDescription;
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
-import java.util.*;
+import java.time.LocalDateTime;
+import static java.time.temporal.ChronoUnit.DAYS;
 
 @Entity
-@Table(name = "task_groups")
-public class TaskGroup extends BaseEntityIsDone {
+@Table(name = "project_steps")
+public class ProjectStep extends BaseEntityDescription {
 
     @Id
     @GeneratedValue(generator = "inc")
     @GenericGenerator(name = "inc", strategy = "increment")
     private long id;
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "group")
-    private Set<Task> tasks;
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
     @JoinColumn(name = "project_id")
     private Project project;
 
-    public TaskGroup() {
+    private long daysLeft;
+
+    public ProjectStep() {
     }
 
     public long getId() {
         return id;
     }
 
-    void setId(final long id) {
+    void setId(long id) {
         this.id = id;
-    }
-
-    public Set<Task> getTasks() {
-        return tasks;
-    }
-
-    void setTasks(Set<Task> tasks) {
-        this.tasks = tasks;
     }
 
     public Project getProject() {
@@ -45,5 +37,13 @@ public class TaskGroup extends BaseEntityIsDone {
 
     void setProject(Project project) {
         this.project = project;
+    }
+
+    public long getDaysLeft() {
+        return daysLeft;
+    }
+
+    void setDaysLeft(long daysLeft) {
+        this.daysLeft = daysLeft;
     }
 }

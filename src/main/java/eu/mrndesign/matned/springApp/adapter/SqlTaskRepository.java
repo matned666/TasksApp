@@ -1,13 +1,11 @@
 package eu.mrndesign.matned.springApp.adapter;
 
 import eu.mrndesign.matned.springApp.model.Task;
-import eu.mrndesign.matned.springApp.model.TaskRepository;
+import eu.mrndesign.matned.springApp.model.repositories.TaskRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 //@RepositoryRestResource
 @Repository
@@ -18,6 +16,7 @@ interface SqlTaskRepository extends TaskRepository, JpaRepository<Task,Integer> 
 
     @Override
     boolean existsByDoneIsFalseAndGroup_Id(Integer groupId);
+
 
     //
 //    Niepotrzebne przy @Repository

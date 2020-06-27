@@ -1,7 +1,7 @@
 package eu.mrndesign.matned.springApp.controller;
 
 import eu.mrndesign.matned.springApp.model.Task;
-import eu.mrndesign.matned.springApp.model.TaskRepository;
+import eu.mrndesign.matned.springApp.model.repositories.TaskRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;

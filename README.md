@@ -21,8 +21,7 @@ https://www.udemy.com/share/102KMiAEISdFhbQn0F/ <br>
 - AOP
 - Spring security<br>
 <br>
-###### Ends with UDEMY certification<br>
-<br>
+sp<br>
 Check out my website: http://mrndesign.eu
 
 

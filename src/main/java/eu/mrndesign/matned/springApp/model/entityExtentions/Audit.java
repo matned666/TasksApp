@@ -1,7 +1,6 @@
-package eu.mrndesign.matned.springApp.model;
+package eu.mrndesign.matned.springApp.model.entityExtentions;
 
 import javax.persistence.Embeddable;
-import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import java.time.LocalDateTime;

@@ -1,7 +1,7 @@
 package eu.mrndesign.matned.springApp.logic;
 
 import eu.mrndesign.matned.springApp.model.Task;
-import eu.mrndesign.matned.springApp.model.TaskGroupRepository;
+import eu.mrndesign.matned.springApp.model.repositories.TaskGroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
